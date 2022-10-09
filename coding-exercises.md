@@ -11,3 +11,4 @@ permalink: /coding-exercises/
       <p>{{ exercise.description }}<p>
   {% endfor %}
 <!---Note: Liquid syntax seems to close open tags without adding them--->
+
