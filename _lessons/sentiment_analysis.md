@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Introduction to stylometry with Python
+title: Sentiment Analysis for Exploratory Data Analysis
 description: This lesson uses Python to apply sentiment analysis to Chevron emails
 ---
 
