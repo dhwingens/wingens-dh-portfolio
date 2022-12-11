@@ -425,16 +425,13 @@ sapply(words, length)
 qplot(metadata$year, sapply(words, length))
 ```
 
-![](text_processing_files/figure-markdown_github/unnamed-chunk-20-1.png)
-<img src="text_processing_files/figure-markdown_github/unnamed-chunk-20-1.png" class="img-responsive" alt=""> </div>
-
-
+![png](text_processing_files/figure-markdown_github/unnamed-chunk-20-1.png)
 ``` r
 qplot(metadata$year, sapply(words, length),
       color = metadata$sotu_type)
 ```
 
-![](text_processing_files/figure-markdown_github/unnamed-chunk-21-1.png)
+![png](text_processing_files/figure-markdown_github/unnamed-chunk-21-1.png)
 
 ``` r
 sentences <- tokenize_sentences(text)
