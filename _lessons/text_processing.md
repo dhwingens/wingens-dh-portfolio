@@ -425,13 +425,13 @@ sapply(words, length)
 qplot(metadata$year, sapply(words, length))
 ```
 
-![png](text_processing_files/figure-markdown_github/unnamed-chunk-20-1.png)
+![png](Rgraphs/figures/graph1.png)
 ``` r
 qplot(metadata$year, sapply(words, length),
       color = metadata$sotu_type)
 ```
 
-![png](text_processing_files/figure-markdown_github/unnamed-chunk-21-1.png)
+![png](Rgraphs/figures/graph2.png)
 
 ``` r
 sentences <- tokenize_sentences(text)
@@ -456,7 +456,7 @@ sentence_length_median <- sapply(sentence_length, median)
 qplot(metadata$year, sentence_length_median)
 ```
 
-![](text_processing_files/figure-markdown_github/unnamed-chunk-26-1.png)
+![png](Rgraphs/figures/graph3.png)
 
 ``` r
 qplot(metadata$year, sentence_length_median) +
@@ -465,7 +465,7 @@ qplot(metadata$year, sentence_length_median) +
 
     ## `geom_smooth()` using method = 'loess' and formula 'y ~ x'
 
-![](text_processing_files/figure-markdown_github/unnamed-chunk-27-1.png)
+![png](Rgraphs/figures/graph4.png)
 
 ``` r
 description <- c()
