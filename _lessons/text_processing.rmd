@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "text_processsing.rmd"
+title: "text processing"
 #output: html_document
 description: Learning to use R to process texts
 ---
