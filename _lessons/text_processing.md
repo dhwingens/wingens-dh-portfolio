@@ -1,3 +1,9 @@
+---
+layout: page
+title: Text Processing with R
+description: This lesson uses R to analyze State of the Union Addresses
+---
+
 \#\#Source: [Jeri Wieringa, “Basic Text Processing in R,” (2017),
 https://doi.org/10.46430/phen0061.](https://programminghistorian.org/en/lessons/basic-text-processing-in-r)
 
