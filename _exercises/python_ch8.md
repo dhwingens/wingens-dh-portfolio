@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Exercises Ch. 6
+title: Exercises Ch. 8
 description: Select exercises from Python Crash Course
 ---
 
