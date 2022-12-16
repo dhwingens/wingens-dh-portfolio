@@ -2,6 +2,7 @@
 layout: page
 title: Exercises Ch. 2
 description: Select exercises from Python Crash Course
+published: false
 ---
 
 
