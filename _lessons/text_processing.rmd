@@ -1,14 +1,19 @@
----
+#---
 layout: page
-title: "text processing"
-#output: html_document
+title: "text_processsing.rmd"
+output:
+  md_document:
+    variant: markdown_github
 description: Learning to use R to process texts
----
+#---
 
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+
+## Source:
+[Jeri Wieringa, "Basic Text Processing in R," (2017), https://doi.org/10.46430/phen0061.](https://programminghistorian.org/en/lessons/basic-text-processing-in-r)
 
 
 ```{r}
@@ -65,9 +70,118 @@ length(sentence_words[[1]])
 length(sentence_words[[2]])
 length(sentence_words[[3]])
 length(sentence_words[[4]])
+#or another way...
+sapply(sentence_words, length)
+```
+
+## Analyzing Barack Obama's 2016 State of the Union
+```{r}
+base_url <- "https://raw.githubusercontent.com/programminghistorian/jekyll/gh-pages/assets/basic-text-processing-in-r/"
+url <- sprintf("%s/sotu_text/236.txt", base_url)
+text <- paste(readLines(url), collapse = "\n")
 ```
 
 ```{r}
-sapply(sentence_words, length)
+words <- tokenize_words(text)
+length(words[[1]])
+```
+```{r}
+tab <- table(words[[1]])
+tab <- data_frame(word = names(tab), count = as.numeric(tab))
+tab <- arrange(tab, desc(count))
+tab
+```
+```{r}
+wf <- read_csv(sprintf("%s/%s", base_url, "word_frequency.csv"))
+wf
+```
+```{r}
+tab <- inner_join(tab, wf)
+tab
+```
+```{r}
+filter(tab, frequency < 0.1)
+
+```
+```{r}
+print(filter(tab, frequency < 0.002), n = 15)
+```
+##Document Summarization
+
+```{r}
+metadata <- read_csv(sprintf("%s/%s", base_url, "metadata.csv"))
+metadata
+```
+```{r}
+tab <- filter(tab, frequency < 0.002)
+result <- c(metadata$president[236], metadata$year[236], tab$word[1:5])
+paste(result, collapse = "; ")
+```
+## Analyzing States of the Union 1790-2016
+
+```{r}
+files <- sprintf("%s/sotu_text/%03d.txt", base_url, 1:236)
+text <- c()
+for (f in files) {
+  text <- c(text, paste(readLines(f), collapse = "\n"))
+}
+```
+
+```{r}
+words <- tokenize_words(text)
+sapply(words, length)
+```
+```{r}
+qplot(metadata$year, sapply(words, length))
+```
+```{r}
+qplot(metadata$year, sapply(words, length),
+      color = metadata$sotu_type)
+```
+
+```{r}
+sentences <- tokenize_sentences(text)
+```
+
+```{r}
+sentence_words <- sapply(sentences, tokenize_words)
+```
+
+```{r}
+sentence_length <- list()
+for (i in 1:nrow(metadata)) {
+  sentence_length[[i]] <- sapply(sentence_words[[i]], length)
+}
+```
+
+```{r}
+sentence_length_median <- sapply(sentence_length, median)
+```
+
+```{r}
+qplot(metadata$year, sentence_length_median)
+```
+
+```{r}
+qplot(metadata$year, sentence_length_median) +
+  geom_smooth()
+```
+
+```{r}
+description <- c()
+for (i in 1:length(words)) {
+  tab <- table(words[[i]])
+  tab <- data_frame(word = names(tab), count = as.numeric(tab))
+  tab <- arrange(tab, desc(count))
+  tab <- inner_join(tab, wf)
+  tab <- filter(tab, frequency < 0.002)
+
+  result <- c(metadata$president[i], metadata$year[i], tab$word[1:5])
+  description <- c(description, paste(result, collapse = "; "))
+}
+```
+
+```{r}
+cat(description, sep = "\n")
 ```
 
