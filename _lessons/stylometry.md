@@ -1,8 +1,8 @@
----
+#---
 layout: page
 title: Introduction to stylometry with Python
 description: This lesson uses Python to apply stylometric analysis to the Federalist Papers to determine authorship of a few of the papers.
----
+#---
 ## Source
 [François Dominic Laramée, "Introduction to stylometry with Python," Programming Historian 7 (2018), https://doi.org/10.46430/phen0078.](https://programminghistorian.org/en/lessons/introduction-to-stylometry-with-python)
 
