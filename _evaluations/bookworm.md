@@ -1,8 +1,8 @@
----
-layout: page
-title: HathiTrust Bookworm
-description: Here I evaluate HathiTrust's Bookworm tool.
----
+#---
+#layout: page
+#title: HathiTrust Bookworm
+#description: Here I evaluate HathiTrust's Bookworm tool.
+#---
 ## Source
 
 [HathiTrust Research Center. HathiTrust+Bookworm. Accessed September 3, 2022.](https://bookworm.htrc.illinois.edu.)
