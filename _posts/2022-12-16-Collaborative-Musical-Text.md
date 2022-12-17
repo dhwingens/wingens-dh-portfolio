@@ -12,4 +12,4 @@ I was really interested in what this article had to say about the evolving natur
 Another element of collaboration in the humanities that has changed since the incorporation of technology is its scale. The projects the article describes were very large in scale and required a global network of academics and students. This kind of collaboration would have been impossible or extremely onerous a couple decades ago. Today, however, the ease and speed of international communication over large networks makes it an almost trivial hurdle if a given project requires it. 
 
 
-Word Count: {{ post.content | size }}
+Word Count: {{ post.content | number_of_words }}
