@@ -4,5 +4,5 @@ title: Final Project
 permalink: /final-project/
 ---
 
-# graph
+# this is my final project
 
