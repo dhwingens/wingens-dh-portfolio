@@ -8,6 +8,10 @@ description: This lesson uses R to analyze State of the Union Addresses
 [Jeri Wieringa, “Basic Text Processing in R,” (2017),
 https://doi.org/10.46430/phen0061.](https://programminghistorian.org/en/lessons/basic-text-processing-in-r)
 
+## Reflection
+I chose this programming historian lesson because I already have some experience in using R to parse data, especially public opinion survey data. R is nice because it is built specifically for statistics and data wrangling, so its solutions to problems are often quite elegant. In this exercise, you can see that it rarely takes more than a line or two of code to reshape a dataframe, perform some analysis, or create a visualization. Despite having used R before, this was my first time trying to process text with it, and I was quite impressed. Many of the NLP texhniques we have learned in python over the course of the semester seem like they are also readily available in R, and in some cases are even a little more straightforward to use. 
+This exercise was also interesting because I am very interested in the texts ut had me analyze, historical State of the Union speeches. It was fascinating to see how the topics and lengths changed over time, even using a somewhat crude method of gathering key words. I could easily envision a visualization of key words over time out of the list that I made. I also thought that the graphs that the lesson had me create were very interesting. Using ggplot and some labeling, I think they could be elevated even more. I would be interested in using R to look at a whole range of texts. For example, I found a database on Kaggle of presidential inauguration speeches which could be equally interedsting to look at. I would also want to look into how to conduct sentiment analysis with R, because it may be interesting to see how the tone of these speeches changed over time.
+
 ``` r
 library(tidyverse)
 ```
@@ -128,7 +132,7 @@ arrange(tab, desc(count))
     ## 10 that      2
     ## # … with 61 more rows
 
-Detecting Sentence Boundaries
+## Detecting Sentence Boundaries
 -----------------------------
 
 ``` r
@@ -205,7 +209,7 @@ sapply(sentence_words, length)
 
     ## [1] 19 32 29  9
 
-Analyzing Barack Obama’s 2016 State of the Union
+## Analyzing Barack Obama’s 2016 State of the Union
 ------------------------------------------------
 
 ``` r
@@ -342,7 +346,7 @@ print(filter(tab, frequency < 0.002), n = 15)
     ## 15 accelerate      2 en        0.000544
     ## # … with 448 more rows
 
-\#\#Document Summarization
+## Document Summarization
 
 ``` r
 metadata <- read_csv(sprintf("%s/%s", base_url, "metadata.csv"))

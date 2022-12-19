@@ -29,25 +29,24 @@ description: Encoding the first poem of the 1856 edition of Leaves of Grass in X
       <head><hi rend=uppercase>leaves of grass</hi></head>
         <hi>1—Poem of Walt Whitman, an American.</hi>
       <body>
-        <hi rend=uppercase>I CELEBRATE</hi> myself,
-        And what I assume you shall assume,
-        For every atom belonging to me, as good belongs
-        to you.
+        <l><hi rend=uppercase>I CELEBRATE</hi> myself,</l>
+        <l>And what I assume you shall assume,</l>
+        <l>For every atom belonging to me, as good belongs</l>
+        <l>to you.</l>
 
-        I loafe and invite my soul,
-        I lean and loafe at my ease, observing a spear of
-        summer grass.
+        <l>I loafe and invite my soul,</l>
+        <l>I lean and loafe at my ease, observing a spear of</l>
+        <l>summer grass.</l>
 
-        Houses and rooms are full of perfumes—the
-        shelves are crowded with perfumes,
-        I breathe the fragrance myself, and know it and
-        like it,
-        The distillation would intoxicate me also, but I
-        shall not let it.
-
-        The atmosphere is not a perfume, it has no taste
-        of the distillation, it is odorless,
-
+        <l>Houses and rooms are full of perfumes—the</l>
+        <l>shelves are crowded with perfumes,</l>
+        <l>I breathe the fragrance myself, and know it and</l>
+        <l>like it,</l>
+        <l>The distillation would intoxicate me also, but I</l>
+        <l>shall not let it.</l>
+        
+        <l>The atmosphere is not a perfume, it has no taste</l>
+        <l>of the distillation, it is odorless,</l>
       </body>
     </text>
   </TEI>
