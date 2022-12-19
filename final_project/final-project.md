@@ -5,4 +5,7 @@ permalink: /final-project/
 ---
 
 # graph
-[graph](../_includes/dickens_eliot_plot.html)
+{% link dickens_eliot_plot.html %}
+
+<!--[graph](../_includes/dickens_eliot_plot.html)
+<!--{% include dickens_eliot_plot.html %}-->
