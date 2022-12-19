@@ -6,4 +6,4 @@ permalink: /final-project/
 
 # graph
 
-{% include dickens_eliot_plot.html %}
+{% include ../_includes/dickens_eliot_plot.html %}
