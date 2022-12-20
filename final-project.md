@@ -3,6 +3,7 @@ layout: page
 title: Final Project
 permalink: /final-project/
 ---
+{% include dickens_eliot_plot.html %}
 
 # Part 1: Scraping the Texts
 
@@ -294,7 +295,7 @@ fig = px.scatter(df, x='x', y='y', symbol='book', color='author', template="simp
 fig.show()
 ```
 
-{% include dickens_eliot_plot.html %}
+
 
 
 ```python
