@@ -294,7 +294,7 @@ fig = px.scatter(df, x='x', y='y', symbol='book', color='author', template="simp
 fig.show()
 ```
 
-{% include dickens_eliot_plot.html %}
+<!--{% include dickens_eliot_plot.html %}-->
 
 
 ```python
