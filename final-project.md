@@ -3,7 +3,7 @@ layout: page
 title: Final Project
 permalink: /final-project/
 ---
-# Writeup and Graphs
+### Writeup and Graphs
 ## Intro
 I went through quite a few ideas for my final project. I was going to do something about Walt Whitman's Leaves of Grass and change over time, and then I was going to potentially encode Leaves of Grass in TEI format. I ended up doing none of those things. I've mentioned quite a few times that I was in a class on Charles Dickens and George Eliot this semester, and as the course was winding down, I decided that I really wanted to do some analysis on texts that I felt like I really knew something about. At the same time, we were learning in class about word/sentence embedding, which really struck me as an interesting an novel way to learn about the texts I've been reading about all semester and to gain some knowledge of machine learning. So, for my project I ran sentence embeddings on all the books I read in my Dickens and Eliot class. These are:
 - _Oliver Twist_ by Charles Dickens
@@ -20,7 +20,7 @@ All my data came from Project Gutenberg. I used their text files and adapted som
 ## The Graphs
 A strong argument could be made that these graphs just have too much going on. It turns out that five long novels adds up to a lot of sentences. Still, I think there are a lot of interesting things going on, and they are not just colorful Rorschach tests! **Please Zoom in, scroll around and hover your mouse to see what each tiny dot represents.**
 
-### Graph 1:
+# Graph 1:
 {% include dickens_eliot_plot.html %}
 
 This was the first graph I made. One thing I did not realize beforehand is that every time I ran the sentence embeddings (unless I've gone mad), the graph seemed to be slightly different. I did some research on how these models work, and it does seem like there is some randomness to the process. At the same time, that may just have been a figment of my imagination. Either way, the process of sentence embedding is a dynamic process and there are many different models out there that would have a different view of the text. Just as with human perception of literature, there is not necessarily one right answer.
@@ -29,7 +29,7 @@ Now onto the details of the graph. 90% of it is one big blob. I expected there t
 
 Most interesting to me, however, is the uniqueness of Dorothea from Middlemarch. One of about six protagonists, Dorothea is clearly Eliot's favorite, and serves most closely as a model of a good member of society. I am really quite surprised at how the most defined section of this graph that is farthest away from the blob is full of quotes about Dorothea (the breakaway section around the top left). She is far from the most eccentric character in these novels, but there is undoubtedly something singular to her character that the model also sees.
 
-### Graph 2:
+# Graph 2:
 {% include dickens_eliot_plot2.html %}
 
 For this plot, I colorde by book instead of by author. I think this plot is interesting because it pretty clearly shows *Middlemarch* at the middle of things with sentences from *Mill on the Floss* and *Adam Bede* occupying spaces to the left, and Dickens novels mostly on the right. Written more towards the end of the Victorian Era, *Middlemarch* really was the apotheosis and summary of the realist novel of the Victorian Age. In it, everything is contained. I am struck again by the place that Dorothea-related quotes occupy on the plot clustered at the top, slightly removed from everything else.
@@ -39,7 +39,7 @@ For this plot, I colorde by book instead of by author. I think this plot is inte
 In my code, you'll see that in addition to makinf CSVs of each book, I also kept track of all the dickens texts concatenated and all the Eliot texts concatenated. I used these to topic model all the novels of each author together. I could not really find convincing names for or rationales behind the topics. What is clear is that Eliot's topics are mostly collections of characters, while Dickens has a lot of eccentric adjectives and action verbs. This reflects the more character-driven nature of Eliot (you can also see my post about the Voyant Tools wordcloud of *Middlemarch* which was pretty much all character names). Dickens's novels have interesting characters but they are much more interested in plot and contain many more eccentric descriptions.
 
 
-# Code Portion!
+### Code Portion!
 Below is all of the code I used to make those plots, and at the bottom you can see my topic modeling.
 
 # Part 1: Scraping the Texts
