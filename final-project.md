@@ -18,7 +18,7 @@ I graphed the embeddings on a 2d plane with plotly. I really like how these grap
 All my data came from Project Gutenberg. I used their text files and adapted some code that Micah gave the class. The cleaning of the text is not overly thorough, but I added a line of regex to get rid of any ambiguous unicode characters that popped up in the texts quite a bit (especially when there was an apostrophe). I split the texts into sentences according to the punctuation marks and put them into CSVs. In retrospect, it may have been better to use Beautiful Soup and used the html version of the text. Especially for topic modeling, that might have led to a better result because I could have more easily chosen how to split the text or switched between ways of splitting text. I'm not really sure how I would split the text into paragraphs with the plain text file. Still, the topic modeling seemed to work fine, so I did not think it would be wise to tinker.
 
 ## The Graphs
-A strong argument could be made that these graphs just have too much going on. It turns out that five long novels adds up to a lot of sentences. Still, I think there are a lot of interesting things going on, and they are not just colorful Rorschach tests!
+A strong argument could be made that these graphs just have too much going on. It turns out that five long novels adds up to a lot of sentences. Still, I think there are a lot of interesting things going on, and they are not just colorful Rorschach tests! **Please Zoom in, scroll around and hover your mouse to see what each tiny dot represents.**
 
 ### Graph 1:
 {% include dickens_eliot_plot.html %}
@@ -33,6 +33,11 @@ Most interesting to me, however, is the uniqueness of Dorothea from Middlemarch.
 {% include dickens_eliot_plot2.html %}
 
 For this plot, I colorde by book instead of by author. I think this plot is interesting because it pretty clearly shows *Middlemarch* at the middle of things with sentences from *Mill on the Floss* and *Adam Bede* occupying spaces to the left, and Dickens novels mostly on the right. Written more towards the end of the Victorian Era, *Middlemarch* really was the apotheosis and summary of the realist novel of the Victorian Age. In it, everything is contained. I am struck again by the place that Dorothea-related quotes occupy on the plot clustered at the top, slightly removed from everything else.
+
+
+## Discussing Topic Modeling Attempt
+In my code, you'll see that in addition to makinf CSVs of each book, I also kept track of all the dickens texts concatenated and all the Eliot texts concatenated. I used these to topic model all the novels of each author together. I could not really find convincing names for or rationales behind the topics. What is clear is that Eliot's topics are mostly collections of characters, while Dickens has a lot of eccentric adjectives and action verbs. This reflects the more character-driven nature of Eliot (you can also see my post about the Voyant Tools wordcloud of *Middlemarch* which was pretty much all character names). Dickens's novels have interesting characters but they are much more interested in plot and contain many more eccentric descriptions.
+
 
 # Code Portion!
 Below is all of the code I used to make those plots, and at the bottom you can see my topic modeling.
