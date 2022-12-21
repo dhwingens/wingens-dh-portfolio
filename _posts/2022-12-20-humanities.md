@@ -18,7 +18,7 @@ Still, while computers can intake data about everything that mankind has wrought
 Although the book is quite recent, I wonder if Drees's outlook on the humanities has changed much.
 
 For what it's worth, ChatGPT is probably better at this than I am:
-```
+
 In his essay "What Are the Humanities?", William Drees defines the humanities as "the study of human culture and experience." He explains that the humanities encompass a wide range of disciplines, including literature, history, philosophy, art, and music, among others. These disciplines help us to understand the complexities of the human experience and provide insight into the ways in which people have interacted with the world around them throughout history.
 
 One of the key arguments that Drees makes in his essay is that the humanities are important because they allow us to gain a deeper understanding of ourselves and our place in the world. By studying the works of great writers, philosophers, and artists, we can gain insight into the ways in which people have grappled with fundamental questions about the nature of the human condition. This, in turn, can help us to better understand our own thoughts and feelings, and to develop a more nuanced perspective on the world around us.
@@ -26,4 +26,3 @@ One of the key arguments that Drees makes in his essay is that the humanities ar
 Another important point that Drees emphasizes is that the humanities are not just an academic pursuit, but are also relevant to our everyday lives. The insights and understanding gained through the study of the humanities can inform our personal and professional lives, as well as our relationships with others. It is through the humanities that we can gain a greater appreciation for the diversity of human cultures and experiences, and learn to respect and value the perspectives of others.
 
 Overall, Drees's essay makes a compelling case for the importance of the humanities in our lives. By studying the humanities, we can gain a deeper understanding of ourselves and our place in the world, and develop a more nuanced and empathetic perspective on the world around us. So, the humanities are a crucial aspect of a well-rounded education, and should be valued and supported in our society.
-```
