@@ -5,12 +5,13 @@ permalink: /final-project/
 ---
 # Writeup and Graphs
 ## Intro
-I went through quite a few ideas for my final project. I was going to do something about Walt Whitman's Leaves of Grass and change over time, and the i was going to potentially encode Leaves of Grass in TEI format. I ended up doing none of those things. I've mentioned quite a few times that I was in a class on Charles Dickens and George Eliot this semester, and as the course was winding down, I decided that I really wanted to do some analysis on texts that I felt like I really knew something about. At the same time, we were learnign in class about word/sentence embedding, which really struck me as an interesting an novel way to learn about the texts I've been reading about all semester and to gain some knowledge of machine learning. So, for my project I ran sentence embeddings on all the books I read in my Dickens and Eliot class. These are:
+I went through quite a few ideas for my final project. I was going to do something about Walt Whitman's Leaves of Grass and change over time, and then I was going to potentially encode Leaves of Grass in TEI format. I ended up doing none of those things. I've mentioned quite a few times that I was in a class on Charles Dickens and George Eliot this semester, and as the course was winding down, I decided that I really wanted to do some analysis on texts that I felt like I really knew something about. At the same time, we were learning in class about word/sentence embedding, which really struck me as an interesting an novel way to learn about the texts I've been reading about all semester and to gain some knowledge of machine learning. So, for my project I ran sentence embeddings on all the books I read in my Dickens and Eliot class. These are:
 - _Oliver Twist_ by Charles Dickens
 - *Great Expectations* by Charles Dickens
 - *Adam Bede* by George Eliot
 - *The Mill on the Floss* by George Eliot
-- *Middlemarch* by George Eliot.
+- *Middlemarch* by George Eliot
+
 I graphed the embeddings on a 2d plane with plotly. I really like how these graphs are interactive and can be explored. I spent a while trying to figure out how to get them to appear on this page as dynamic graphs, but after a couple hours and some very niche internet forums, I sorted it out. In order to analyze these texts, I also tried my hand at some topic modeling of the Dickens novels and eliot novels. The results of that topic modeling are at the bottom of the coding section.
 
 ## Data Gathering
@@ -19,11 +20,19 @@ All my data came from Project Gutenberg. I used their text files and adapted som
 ## The Graphs
 A strong argument could be made that these graphs just have too much going on. It turns out that five long novels adds up to a lot of sentences. Still, I think there are a lot of interesting things going on, and they are not just colorful Rorschach tests!
 
-### Graph 1
+### Graph 1:
 {% include dickens_eliot_plot.html %}
 
-### Graph 2
+This was the first graph I made. One thing I did not realize beforehand is that every time I ran the sentence embeddings (unless I've gone mad), the graph seemed to be slightly different. I did some research on how these models work, and it does seem like there is some randomness to the process. At the same time, that may just have been a figment of my imagination. Either way, the process of sentence embedding is a dynamic process and there are many different models out there that would have a different view of the text. Just as with human perception of literature, there is not necessarily one right answer.
+
+Now onto the details of the graph. 90% of it is one big blob. I expected there to be a little more differentiation between Dickens and Eliot, but in this graph it is hard to see much of a difference. That being said, there is definitely a section of *Oliver Twist* sentences that are noticeable on the left and *Great Expectations* sentences on the right. I think that the distance between these two is notable because they are texts from opposite ends of Dickens's career. *Great Expectations* is a novel that contains much more Eliotic sympathy and more of a psychologically realist novel in the mold of an Eliot novel. *Oliver Twist* is more full of outrageous characters and heavy politically-minded criticism of society. 
+
+Most interesting to me, however, is the uniqueness of Dorothea from Middlemarch. One of about six protagonists, Dorothea is clearly Eliot's favorite, and serves most closely as a model of a good member of society. I am really quite surprised at how the most defined section of this graph that is farthest away from the blob is full of quotes about Dorothea (the breakaway section around the top left). She is far from the most eccentric character in these novels, but there is undoubtedly something singular to her character that the model also sees.
+
+### Graph 2:
 {% include dickens_eliot_plot2.html %}
+
+For this plot, I colorde by book instead of by author. I think this plot is interesting because it pretty clearly shows *Middlemarch* at the middle of things with sentences from *Mill on the Floss* and *Adam Bede* occupying spaces to the left, and Dickens novels mostly on the right. Written more towards the end of the Victorian Era, *Middlemarch* really was the apotheosis and summary of the realist novel of the Victorian Age. In it, everything is contained. I am struck again by the place that Dorothea-related quotes occupy on the plot clustered at the top, slightly removed from everything else.
 
 # Code Portion!
 Below is all of the code I used to make those plots, and at the bottom you can see my topic modeling.
