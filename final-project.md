@@ -3,7 +3,30 @@ layout: page
 title: Final Project
 permalink: /final-project/
 ---
+# Writeup and Graphs
+## Intro
+I went through quite a few ideas for my final project. I was going to do something about Walt Whitman's Leaves of Grass and change over time, and the i was going to potentially encode Leaves of Grass in TEI format. I ended up doing none of those things. I've mentioned quite a few times that I was in a class on Charles Dickens and George Eliot this semester, and as the course was winding down, I decided that I really wanted to do some analysis on texts that I felt like I really knew something about. At the same time, we were learnign in class about word/sentence embedding, which really struck me as an interesting an novel way to learn about the texts I've been reading about all semester and to gain some knowledge of machine learning. So, for my project I ran sentence embeddings on all the books I read in my Dickens and Eliot class. These are:
+- _Oliver Twist_ by Charles Dickens
+- *Great Expectations* by Charles Dickens
+- *Adam Bede* by George Eliot
+- *The Mill on the Floss* by George Eliot
+- *Middlemarch* by George Eliot.
+I graphed the embeddings on a 2d plane with plotly. I really like how these graphs are interactive and can be explored. I spent a while trying to figure out how to get them to appear on this page as dynamic graphs, but after a couple hours and some very niche internet forums, I sorted it out. In order to analyze these texts, I also tried my hand at some topic modeling of the Dickens novels and eliot novels. The results of that topic modeling are at the bottom of the coding section.
+
+## Data Gathering
+All my data came from Project Gutenberg. I used their text files and adapted some code that Micah gave the class. The cleaning of the text is not overly thorough, but I added a line of regex to get rid of any ambiguous unicode characters that popped up in the texts quite a bit (especially when there was an apostrophe). I split the texts into sentences according to the punctuation marks and put them into CSVs. In retrospect, it may have been better to use Beautiful Soup and used the html version of the text. Especially for topic modeling, that might have led to a better result because I could have more easily chosen how to split the text or switched between ways of splitting text. I'm not really sure how I would split the text into paragraphs with the plain text file. Still, the topic modeling seemed to work fine, so I did not think it would be wise to tinker.
+
+## The Graphs
+A strong argument could be made that these graphs just have too much going on. It turns out that five long novels adds up to a lot of sentences. Still, I think there are a lot of interesting things going on, and they are not just colorful Rorschach tests!
+
+### Graph 1
 {% include dickens_eliot_plot.html %}
+
+### Graph 2
+{% include dickens_eliot_plot2.html %}
+
+# Code Portion!
+Below is all of the code I used to make those plots, and at the bottom you can see my topic modeling.
 
 # Part 1: Scraping the Texts
 
