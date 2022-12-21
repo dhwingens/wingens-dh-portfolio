@@ -15,11 +15,11 @@ I went through quite a few ideas for my final project. I was going to do somethi
 - *The Mill on the Floss* by George Eliot
 - *Middlemarch* by George Eliot
 
-I graphed the embeddings on a 2d plane with plotly. I really like how these graphs are interactive and can be explored. I spent a while trying to figure out how to get them to appear on this page as dynamic graphs, but after a couple hours and some very niche internet forums, I sorted it out. In order to analyze these texts, I also tried my hand at some topic modeling of the Dickens novels and eliot novels. The results of that topic modeling are at the bottom of the coding section.
+Sentence embedding allows the computer to represent sentences with vector values. By gathering these values, we can then put them on a plot and see how a machine might view a text. I graphed the embeddings on a 2d plane with plotly. I really like how these graphs are interactive and can be explored. I spent a while trying to figure out how to get them to appear on this page as dynamic graphs, but after a couple hours and some very niche internet forums, I sorted it out. In order to analyze these texts, I also tried my hand at some topic modeling of the Dickens novels and Eliot novels. The results of that topic modeling are at the bottom of the coding section.
 
 ## Data Gathering
 
-All my data came from Project Gutenberg. I used their text files and adapted some code that Micah gave the class. The cleaning of the text is not overly thorough, but I added a line of regex to get rid of any ambiguous unicode characters that popped up in the texts quite a bit (especially when there was an apostrophe). I split the texts into sentences according to the punctuation marks and put them into CSVs. In retrospect, it may have been better to use Beautiful Soup and used the html version of the text. Especially for topic modeling, that might have led to a better result because I could have more easily chosen how to split the text or switched between ways of splitting text. I'm not really sure how I would split the text into paragraphs with the plain text file. Still, the topic modeling seemed to work fine, so I did not think it would be wise to tinker.
+All my data came from Project Gutenberg. I used their text files and adapted some code that Micah gave the class. The cleaning of the text is not overly thorough, but I added a line of regex to get rid of any ambiguous unicode characters that popped up in the texts quite a bit (especially when there was an apostrophe). I split the texts into sentences according to the punctuation marks and put them into CSVs. In retrospect, it may have been better to use Beautiful Soup and the html version of the text. Especially for topic modeling, that might have led to a better result because I could have more easily chosen how to split the text or switched between ways of splitting text. I'm not really sure how I would split the text into paragraphs with the plain text file. Still, the topic modeling seemed to work fine, so I did not think it would be wise to tinker.
 
 ## The Graphs
 
@@ -31,7 +31,7 @@ A strong argument could be made that these graphs just have too much going on. I
 
 This was the first graph I made. One thing I did not realize beforehand is that every time I ran the sentence embeddings (unless I've gone mad), the graph seemed to be slightly different. I did some research on how these models work, and it does seem like there is some randomness to the process. At the same time, that may just have been a figment of my imagination. Either way, the process of sentence embedding is a dynamic process and there are many different models out there that would have a different view of the text. Just as with human perception of literature, there is not necessarily one right answer.
 
-Now onto the details of the graph. 90% of it is one big blob. I expected there to be a little more differentiation between Dickens and Eliot, but in this graph it is hard to see much of a difference. That being said, there is definitely a section of *Oliver Twist* sentences that are noticeable on the left and *Great Expectations* sentences on the right. I think that the distance between these two is notable because they are texts from opposite ends of Dickens's career. *Great Expectations* is a novel that contains much more Eliotic sympathy and more of a psychologically realist novel in the mold of an Eliot novel. *Oliver Twist* is more full of outrageous characters and heavy politically-minded criticism of society. 
+Now onto the details of the graph. 90% of it is one big blob. I expected there to be a little more differentiation between Dickens and Eliot, but in this graph it is hard to see much of a difference. That being said, there is definitely a section of *Oliver Twist* sentences that are noticeable on the left and *Great Expectations* sentences on the right. I think that the distance between these two is notable because they are texts from opposite ends of Dickens's career. *Great Expectations* is a novel that contains much more Eliotic sympathy and more psychologically realist in the mold of an Eliot novel. *Oliver Twist* is more full of outrageous characters and heavy politically-minded criticism of society. 
 
 Most interesting to me, however, is the uniqueness of Dorothea from Middlemarch. One of about six protagonists, Dorothea is clearly Eliot's favorite, and serves most closely as a model of a good member of society. I am really quite surprised at how the most defined section of this graph that is farthest away from the blob is full of quotes about Dorothea (the breakaway section around the top left). She is far from the most eccentric character in these novels, but there is undoubtedly something singular to her character that the model also sees.
 
@@ -39,11 +39,11 @@ Most interesting to me, however, is the uniqueness of Dorothea from Middlemarch.
 
 {% include dickens_eliot_plot2.html %}
 
-For this plot, I colorde by book instead of by author. I think this plot is interesting because it pretty clearly shows *Middlemarch* at the middle of things with sentences from *Mill on the Floss* and *Adam Bede* occupying spaces to the left, and Dickens novels mostly on the right. Written more towards the end of the Victorian Era, *Middlemarch* really was the apotheosis and summary of the realist novel of the Victorian Age. In it, everything is contained. I am struck again by the place that Dorothea-related quotes occupy on the plot clustered at the top, slightly removed from everything else.
+For this plot, I colored by book instead of by author. I think this plot is interesting because it pretty clearly shows *Middlemarch* at the middle of things with sentences from *Mill on the Floss* and *Adam Bede* occupying spaces to the left, and Dickens novels mostly on the right. Written more towards the end of the Victorian Era, *Middlemarch* really was the apotheosis and summary of the realist novel of the Victorian Age. In it, everything is contained. I am struck again by the place that Dorothea-related quotes occupy on the plot clustered at the top, slightly removed from everything else.
 
 
 ## Discussing Topic Modeling Attempt
-In my code, you'll see that in addition to makinf CSVs of each book, I also kept track of all the dickens texts concatenated and all the Eliot texts concatenated. I used these to topic model all the novels of each author together. I could not really find convincing names for or rationales behind the topics. What is clear is that Eliot's topics are mostly collections of characters, while Dickens has a lot of eccentric adjectives and action verbs. This reflects the more character-driven nature of Eliot (you can also see my post about the Voyant Tools wordcloud of *Middlemarch* which was pretty much all character names). Dickens's novels have interesting characters but they are much more interested in plot and contain many more eccentric descriptions.
+In my code, you'll see that in addition to making CSVs of each book, I also kept track of all the dickens texts concatenated and all the Eliot texts concatenated. I used these to topic model all the novels of each author together. I could not really find convincing names for or rationales behind the topics. What is clear is that Eliot's topics are mostly collections of characters, while Dickens has a lot of eccentric adjectives and action verbs. This reflects the more character-driven nature of Eliot (you can also see my post about the Voyant Tools wordcloud of *Middlemarch* which was pretty much all character names). Dickens's novels contain interesting characters but they are much more interested in plot and contain many more eccentric descriptions.
 
 
 # Code Portion!
@@ -348,7 +348,7 @@ fig.write_html('../_includes/dickens_eliot_plot.html')
 ```
 
 # Now for some Topic Modeling
-The main issue I foresee is that whereas
+
 
 
 ```python
